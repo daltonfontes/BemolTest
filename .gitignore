@@ -16,3 +16,9 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+questionario.txt
+/backup
+/cache
+/config
+/database
+/log
