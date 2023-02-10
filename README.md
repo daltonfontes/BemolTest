@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://s3-sa-east-1.amazonaws.com/prod-jobsite-files.kenoby.com/uploads/novabd-1598984273-bedigital-1584103456-iconepngpng.png" width="320" alt="luby Logo" />
+  <img src="https://s3-sa-east-1.amazonaws.com/prod-jobsite-files.kenoby.com/uploads/novabd-1598984273-bedigital-1584103456-iconepngpng.png" width="320"/>
 </p>
 
 # Descrição do desafio
