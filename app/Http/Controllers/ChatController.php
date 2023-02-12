@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Message;
+use App\Events\MessageSent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -30,6 +31,7 @@ class ChatController extends Controller
             'message' => $request->input('message')
         ]);
         
+        broadcast(new MessageSent($user, $message))->toOthers();
         return ['status' => 'Mesagem enviada!'];
     }
 }
