@@ -61,6 +61,34 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label for="cep" class="col-md-4 col-form-label text-md-end">{{ __('Cep') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="cep" type="text" class="form-control @error('cep') is-invalid @enderror" name="cep" value="{{ old('cep') }}" required autocomplete="cep">
+                                
+                                @error('cep')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="logradouro" class="col-md-4 col-form-label text-md-end">{{ __('Logradouro') }}</label>
+
+                            <div class="col-md-6">
+                            <input id="logradouro" type="text" class="form-control @error('logradouro') is-invalid @enderror" name="logradouro" value="{{ old('logradouro') }}" required autocomplete="logradouro">
+
+                                @error('logradouro')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

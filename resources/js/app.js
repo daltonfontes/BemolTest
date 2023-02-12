@@ -3,9 +3,14 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+import Echo from 'laravel-echo';
 
 import './bootstrap';
 import { createApp } from 'vue';
+
+
+import ChatMessage from './components/ChatMessage.vue';
+import ChatForm from './components/ChatForm.vue';
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -13,10 +18,46 @@ import { createApp } from 'vue';
  * to use in your application's views. An example is included for you.
  */
 
-const app = createApp({});
+const app = createApp({
+    el: '#app',
+    data() {
+        return {
+            messages: [],
+        };
+    },
+    created() {
+        this.fetchMessages();
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+        window.Echo.private('chat')
+            .listen('MessageSent', (e) => {
+                this.messages.push({
+                    message: e.message.message,
+                    user: e.user
+                });
+            });
+    },
+
+    methods: {
+        fetchMessages() {
+            axios.get('/messages').then(response => {
+                this.messages = response.data;
+            });
+        },
+
+        addMessage(message) {
+            this.messages.push(message);
+
+            axios.post('/messages', message).then(response => {
+                console.log(response.data);
+            });
+        }
+    }
+});
+
+
+//app.component('example-component', ExampleComponent);
+app.component('chat-messages', ChatMessage);
+app.component('chat-form', ChatForm);
 
 /**
  * The following block of code may be used to automatically register your
