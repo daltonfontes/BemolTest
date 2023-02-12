@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://s3-sa-east-1.amazonaws.com/prod-jobsite-files.kenoby.com/uploads/novabd-1598984273-bedigital-1584103456-iconepngpng.png" width="320"/>
-</p>
-
 # Descrição do desafio
 
 Desenvolver um Omnichannel.
@@ -38,6 +34,8 @@ $ cd BemolTest
 
 # Instale as dependências
 $ npm install
+$ composer install
+
 
 # Edite os campos abaixo no seu arquivo .env para configurar a base de dados.
 
@@ -55,7 +53,23 @@ $ php artisan serve
 # O servidor inciará na porta:8000 - acesse <http://localhost:8000>
 
 ```
-### 🎲 C4 Model
+
+### 🎲 Rodando o Front End (cliente)
+
+```bash
+
+# Vá para a pasta server
+$ cd BemolTest
+
+# Instale as dependências
+$ npm install
+
+# Iniciar aplicação
+$ npm run dev
+# O servidor inciará na porta:5173 - acesse <http://localhost:8000>
+
+```
+### C4 Model
 
 Contexto:
 
@@ -77,3 +91,7 @@ O código-fonte da aplicação é mantido no GitHub e é organizado em pastas qu
 O código é escrito em PHP e segue as boas práticas do Laravel, como o uso de rotas, controladores e serviços.
 
 ### C4 Diagrama
+
+<p align="center">
+  <img src="diagram.png" width="500"/>
+</p>
